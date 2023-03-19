@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head><meta charset="utf-8">
+<style>
+  p,
+label {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+    margin: 0.4rem;
+}
+
+a[href^='mailto']::before {
+    content: '📧 ';
+}
+
+a[href^='tel']::before {
+    content: '📞 ';
+}
+.forecast {
+    margin: 0;
+    padding: 0.3rem;
+    background-color: #eee;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+.forecast > h1,
+.day-forecast {
+    margin: 0.5rem;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.day-forecast {
+    background: right/contain content-box border-box no-repeat url('/media/examples/rain.svg') white;
+}
+
+.day-forecast > h2,
+.day-forecast > p {
+    margin: 0.2rem;
+    font-size: 1rem;
+}
+article {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #45a1ff;
+    color: #fff;
+}
+.logo {
+    background: left / cover url('/media/examples/puppy-header-logo.jpg');
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    font: bold calc(1em + 7 * (100vw - 120px) / 100) 'Dancing Script', fantasy;
+    color: #55ff00;
+    text-shadow: #000 2px 2px 0.2rem;
+}
+
+header > h1 {
+    margin-bottom: 0;
+}
+
+header > time {
+    font: italic 0.7rem sans-serif;
+}
+caption {
+    padding: 10px;
+    caption-side: bottom;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+}
+
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 7px 5px;
+}
+
+th {
+    background-color: rgb(235, 235, 235);
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) td {
+    background-color: rgb(250, 250, 250);
+}
+
+tr:nth-child(odd) td {
+    background-color: rgb(240, 240, 240);
+}
+
+.heman {
+    font: 1.4rem molot;
+    text-shadow: 1px 1px 1px #fff, 2px 2px 1px #000;
+}
+
+.skeletor {
+    font: 1.7rem rapscallion;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0 #fff, 0 0 9px #000;
+}
+.batman {
+    background-color: #ebf2d7;
+}
+
+.flash {
+    background-color: #ffe8d4;
+}
+
+caption {
+    padding: 8px;
+    caption-side: bottom;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(100, 100, 100);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 0.7rem;
+}
+
+td,
+th {
+    border: 1px solid rgb(100, 100, 100);
+    padding: 10px 10px;
+}
+
+td {
+    text-align: center;
+}
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+p,
+label {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+    margin: 0.4rem;
+}
+label {
+    display: block;
+    font: 0.9rem 'Fira Sans', sans-serif;
+}
+
+input[type='submit'],
+label {
+    margin-top: 1rem;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: 0.4rem 0;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: 0.4rem 0;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: 0.4rem 0;
+}
+p:hover, h1:hover, a:hover {
+  background-color: yellow;
+}
+</style>
+  </head><body>
+
+    <header>
+      <a class="logo" href="#">New England Historic Town</a>
+  </header>
+  
+  <article>
+      <header>
+          <h1>Oldest houses in the USA</h1>
+          
+      </header>
+      
+  </article>
+  
+<p>Contact the author of this page:</p>
+
+<address>
+  <a href="mailto:jupadhya@gmail.com">jupadhya@mail.com</a><br>
+  <a href="tel:+19782386119">(978) 238-6119</a>
+</address>
+<article class="forecast">
+  <h1>Weather forecast for Ipswich</h1>
+  <article class="day-forecast">
+      <h2>23 March 2023</h2>
+      <p>Rain.</p>
+  </article>
+  <article class="day-forecast">
+      <h2>24 March 2023</h2>
+      <p>Periods of rain.</p>
+  </article>
+  <article class="day-forecast">
+      <h2>25 March 2023</h2>
+      <p>Heavy rain.</p>
+  </article>
+</article>
+<article>
+  <h1>How to plan a visit?</h1>
+  <ol>
+      <li>Check the weather.</li>
+      <li>Check the events.</li>
+      <li>Book the tickets.</li>
+  </ol>
+  <footer>
+      <p>© 2023 Ipswich</p>
+  </footer>
+</article>
+<table>
+  <caption>He-Man and Skeletor facts</caption>
+  <tr>
+      <td> </td>
+      <th scope="col" class="heman">He-Man</th>
+      <th scope="col" class="skeletor">Skeletor</th>
+  </tr>
+  <tr>
+      <th scope="row">Role</th>
+      <td>Hero</td>
+      <td>Villain</td>
+  </tr>
+  <tr>
+      <th scope="row">Weapon</th>
+      <td>Power Sword</td>
+      <td>Havoc Staff</td>
+  </tr>
+  <tr>
+      <th scope="row">Dark secret</th>
+      <td>Expert florist</td>
+      <td>Cries at romcoms</td>
+  </tr>
+</table>
+<table>
+  <caption>Superheros and sidekicks</caption>
+  <colgroup>
+      <col>
+      <col span="2" class="batman">
+      <col span="2" class="flash">
+  </colgroup>
+  <tr>
+      <td> </td>
+      <th scope="col">Batman</th>
+      <th scope="col">Robin</th>
+      <th scope="col">The Flash</th>
+      <th scope="col">Kid Flash</th>
+  </tr>
+  <tr>
+      <th scope="row">Skill</th>
+      <td>Smarts</td>
+      <td>Dex, acrobat</td>
+      <td>Super speed</td>
+      <td>Super speed</td>
+  </tr>
+</table>
+
+<input class="favorite styled"
+       type="button"
+       value="Add to favorites">
+       <fieldset>
+        <legend>Choose your monster's features:</legend>
+    
+        <div>
+          <input type="checkbox" id="scales" name="scales" checked>
+          <label for="scales">Scales</label>
+        </div>
+    
+        <div>
+          <input type="checkbox" id="horns" name="horns">
+          <label for="horns">Horns</label>
+        </div>
+    </fieldset>
+    <p>Choose your monster's colors:</p>
+
+<div>
+    <input type="color" id="head" name="head"
+           value="#e66465">
+    <label for="head">Head</label>
+</div>
+
+<div>
+    <input type="color" id="body" name="body"
+            value="#f6b73c">
+    <label for="body">Body</label>
+</div>
+<label for="name">Name (4 to 8 characters):</label>
+
+<input type="text" id="name" name="name" required
+       minlength="4" maxlength="8" size="10">
+
+       <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+    </div>
+    
+    <div>
+        <label for="pass">Password (8 characters minimum):</label>
+        <input type="password" id="pass" name="password"
+               minlength="8" required>
+    </div>
+    
+    <input type="submit" value="Sign in">
+    
+    <label for="phone">Enter your phone number:</label>
+
+    <input type="tel" id="phone" name="phone"
+           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+           required>
+    
+    <small>Format: 123-456-7890</small>
+    <label for="email">Enter your globex.com email:</label>
+
+<input type="email" id="email"
+       pattern=".+@globex\.com" size="30" required>
+
+    
+    <label for="start">Start date:</label>
+
+    <input type="date" id="start" name="trip-start"
+           value="2018-07-22"
+           min="2018-01-01" max="2018-12-31">
+           <label for="meeting-time">Choose a date and time for your appointment:</label>
+
+           <input type="datetime-local" id="meeting-time"
+                  name="meeting-time" value="2018-06-12T19:30"
+                  min="2018-06-07T00:00" max="2018-06-14T00:00">
+           <br>
+                  <input type="submit" />
+
+
+</body>
+
+</html>

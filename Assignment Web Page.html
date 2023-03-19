@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: 0.7rem 0;
+}
+
+    body {
+  font-family: Arial;
+  margin: 2;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 3px;
+  text-align: center;
+  background: #1abcb4;
+  color: white;
+  font-size: 30px;
+}
+
+/* Page Content */
+.content {padding:20px;}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: 0.4rem 0;
+}
+label {
+    display: block;
+    font: 0.9rem 'Fira Sans', sans-serif;
+}
+
+input[type='submit'],
+label {
+    margin-top: 1rem;
+}
+
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Doctor Appointment </h1>
+        <p>Web Page</p>
+      </div>
+      
+      <div class="content">
+        
+      </div>
+
+<h2>Form for scheduling an appointment.</h2>
+<p>You can create your user name and password.</p>
+
+<div class="footer">
+  <p>Copyright Jolly Upadhyaya</p>
+</div>
+<label for="name">Name (4 to 8 characters):</label>
+
+<input type="text" id="name" name="name" required
+       minlength="4" maxlength="8" size="10">
+
+       <input class="favorite styled"
+       type="button"
+       value="Add to favorites">
+       <label for="meeting-time">Choose a time for your appointment:</label>
+
+<input type="datetime-local" id="meeting-time"
+       name="meeting-time" value="2018-06-12T19:30"
+       min="2018-06-07T00:00" max="2018-06-14T00:00">
+       <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+    </div>
+    
+    <div>
+        <label for="pass">Password (8 characters minimum):</label>
+        <input type="password" id="pass" name="password"
+               minlength="8" required>
+    </div>
+    
+    <input type="submit" value="Sign in">
+    
+
+</body>
+</html> 

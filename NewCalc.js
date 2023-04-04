@@ -1,64 +1,88 @@
-var calcScreen;
-var accumulator;
-var operation;
-const initCalc = function () {
-    calcScreen = document.getElementById("CalcScreen");
-    accumulator = 0;
-    operation = "";
-}
-
 const addTextToInput = function (digit) {
-    calcScreen.value += digit;
+    let mainText=document.getElementById("mainText");
+    mainText.value=mainText.value+digit;
 };
 
-const getScreenValue = function () {
-    return calcScreen.value;
+const getValue = function () {
+    return +mainText.value;
 };
 
-const setScreenValue = function (value) {
-    calcScreen.value = value.toString();
+const setValue = function (numericalValue) {
+    mainText.value = numericalValue.toString();
 };
 
 const changeSign = function () {
-    calcScreen.value = -calcScreen.value;
+    mainText.value=-mainText.value;
 };
 
-const clearScreen = function () {
-    calcScreen.value = "";
+const clear = function () {
+    mainText.value="0";
 };
+
+var accumulator=0;
+var operation="";
 
 const minus = function () {
-    accumulator = getScreenValue();
+    accumulator = getValue();
     operation = "minus";
-    clearScreen();
+    clear();
 };
 
 const plus = function () {
-    accumulator = getScreenValue();
+    accumulator = getValue();
     operation = "plus";
-    clearScreen();
+    clear();
 };
 
 const equals = function () {
     switch (operation) {
         case "minus":
-            setScreenValue(accumulator - getScreenValue());
+            setValue(accumulator - getValue());
             break;
         case "plus":
-            setScreenValue(Number(accumulator) + Number(getScreenValue()));
+            setValue(accumulator+ getValue());
             break;
             
     }
 };
 
-const appendValue = function (digit) {
+const onClickNumber=function(digit){
     addTextToInput(digit);
 };
 
-
-const computeMax = function () {
-    numList = getScreenValue().split(",");
-    setScreenValue(numList[2]);
+const resetCalculator=function(){
+    setValue=0;
+    accumulator=0;
+    operation="";
 };
+
+const getNumberList=function(){
+    const mainTextValue=mainText.value;
+    const numberList = mainTextValue.split(",").map(function(numberString){
+    return +numberString.trim();
+    });
+    return numberList;
+};
+
+const min=function(){
+    const numberList=getNumberList();
+    const minValue=Math.min.apply(Math,numberList);
+    setValue(minValue);
+};
+
+const max=function(){
+    const numberList=getNumberList();
+    const maxValue=Math.max.apply(Math,numberList);
+    setValue(maxValue);
+};
+
+const avg=function(){
+    const numberList=getNumberList();
+    const sum=numberList.reduce(function(accumulator,currentValue){
+        return accumulator + currentValue;
+    },0);
+    const avgValue=sum/numberList.length;
+    setValue(avgValue);
+    };
 
 

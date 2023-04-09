@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electric Vehicles</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .car {
+      display: inline-block;
+      width: 200px;
+      margin: 10px;
+    }
+    .car-img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="car-gallery"></div>
+  <script>
+    // define car data
+    const carData = [
+      {
+        brand: 'Tesla',
+        model: 'Model S',
+        imageUrl: 'https://www.tesla.com/sites/default/files/modelsx-new/social/model-s-hero-social.jpg'
+      },
+      {
+        brand: 'Audi',
+        model: 'e-tron GT',
+        imageUrl: 'https://www.audi-mediacenter.com/mediahub_image/433186/zoom/587b227ed26014cda972b199e7e784c1/default-a525c2/450x253.jpg'
+      },
+      {
+        brand: 'Chevrolet',
+        model: 'Bolt EV',
+        imageUrl: 'https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2022/electric/bolt-ev/01-images/2022-chevrolet-bolt-ev.jpg?imwidth=960'
+      },
+      {
+        brand: 'Nissan',
+        model: 'Leaf',
+        imageUrl: 'https://www.nissanusa.com/content/dam/Nissan/us/vehicles/leaf/2022/overview/2022-nissan-leaf-02.jpg'
+      }
+    ];
+
+    // create car gallery
+    const carGallery = d3.select('#car-gallery')
+      .selectAll('.car')
+      .data(carData)
+      .enter()
+      .append('div')
+      .attr('class', 'car');
+
+    // add car image and text
+    carGallery.append('img')
+      .attr('src', d => d.imageUrl)
+      .attr('class', 'car-img');
+
+    carGallery.append('p')
+      .text(d => `${d.brand} ${d.model}`);
+  </script>
+</body>
+</html>

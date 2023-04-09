@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Linking CSV file to HTML and displaying in table using JavaScript</title>
+	<style>
+		
+		table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+		table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+	</style>
+
+</head>
+<body>
+	<button id="load-csv">Load CSV</button>
+	<table id="csv-table"></table>
+
+	<script>
+		// define function to load CSV file and display in table
+		function loadCSV() {
+			// create XHR object
+			var xhr = new XMLHttpRequest();
+
+			// set onload handler
+			xhr.onload = function() {
+				// check if the request is successful
+				if (xhr.status === 200) {
+					// parse the CSV data
+					var data = xhr.responseText;
+					var rows = data.split("\n");
+
+					// create table rows and columns
+					var table = document.getElementById("csv-table");
+					for (var i = 0; i < rows.length; i++) {
+						var cells = rows[i].split(",");
+						var row = document.createElement("tr");
+
+						for (var j = 0; j < cells.length; j++) {
+							var cell = document.createElement("td");
+							cell.textContent = cells[j];
+							row.appendChild(cell);
+						}
+
+						table.appendChild(row);
+					}
+				} else {
+					// handle error
+					console.error(xhr.statusText);
+				}
+			};
+
+			// set onerror handler
+			xhr.onerror = function() {
+				console.error(xhr.statusText);
+			};
+
+			// open the connection and send the request
+			xhr.open("GET", "Electric_Vehicle_Population_Data.csv", true);
+			xhr.send(null);
+		}
+
+		// add click handler to the button
+		document.getElementById("load-csv").addEventListener("click", loadCSV);
+	</script>
+</body>
+</html>

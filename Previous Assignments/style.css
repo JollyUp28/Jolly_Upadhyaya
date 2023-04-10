@@ -5,7 +5,7 @@
     gap: 10px;
     margin-bottom: 20px;
   }
-  
+  footer::after{content: " = Mehmet Onur Kayabas ";}
 
   .grid-container button:hover {
     background-color: rgb(209, 55, 55);
